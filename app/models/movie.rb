@@ -1,6 +1,6 @@
 class Movie < ApplicationRecord
   has_many :bookmarks
-  validates :title, uniqueness: true
-  validates :title, format: { with: /(.|\s)*\S(.|\s)*/ }
-  validates :overview, format: { with: /(.|\s)*\S(.|\s)*/ }
+
+  validates :title, presence: true, uniqueness: true
+  validates :overview, presence: true
 end
